@@ -18,7 +18,7 @@ namespace ComponentTest
 			temp.Add(new List<int>() { 5, 8, 2, 1, 4 });
 
 			ComponentLibrary.Models.ListOfListsViewModel listOfListsView = new ComponentLibrary.Models.ListOfListsViewModel(temp);
-			Assert.AreEqual(listOfListsView.GetResultString(), "1,3,9,21");
+			Assert.AreEqual(listOfListsView.GetResultString(), "1,2,3,4,5,8,9,21");
 		}
 	}
 }

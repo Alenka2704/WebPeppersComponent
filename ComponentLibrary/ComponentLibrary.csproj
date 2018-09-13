@@ -16,7 +16,7 @@
 		<EmbeddedResource Include="Views/**/*.cshtml" />
 	</ItemGroup>
 	<ItemGroup>
-	  <None Remove="Views\Shared\Components\ListComponent\Default.cshtml" />
+	  <None Remove="Views\Shared\Components\List\Default.cshtml" />
 	</ItemGroup>
 	<ItemGroup>
 		<Folder Include="Models\" />

@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
 
 namespace ComponentLibrary.Models
 {
@@ -26,11 +25,11 @@ namespace ComponentLibrary.Models
 			return TotalList.Distinct().ToList();
 		}
 
-		public string GetResultString()
+		public async Task<string> GetResultString()
 		{
 			StringBuilder result = new StringBuilder();
 			GetSortedDistincts().ForEach(item => result.Append(",").Append(item));
-			return result.Remove(0, 1).ToString();
+			return await Task.FromResult(result.Remove(0, 1).ToString());
 		}
 	}
 }
