@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netcoreapp2.1</TargetFramework>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.MVC" Version="1.0.0" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="1.0.0" />
+	</ItemGroup>
+	<ItemGroup>
+		<DotNetCliToolReference Include="Microsoft.AspNetCore.Razor.Tools" Version="1.1.0-preview4-final" />
+	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="Views/**/*.cshtml" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Remove="Views\Shared\Components\ListComponent\Default.cshtml" />
+	</ItemGroup>
+	<ItemGroup>
+		<Folder Include="Models\" />
+	</ItemGroup>
+	<PropertyGroup>
+		<PackageTargetFallback>dnxcore50</PackageTargetFallback>
+	</PropertyGroup>
+
+</Project>
