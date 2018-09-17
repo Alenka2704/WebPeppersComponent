@@ -1,13 +1,15 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using ComponentLibrary.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ComponentLibrary.ViewComponents
 {
 	public class ListViewComponent : ViewComponent
 	{
-		public IViewComponentResult Invoke(List<List<int>> lists)
+		public async Task<IViewComponentResult> InvokeAsync(List<List<int>> lists)
 		{
-			return View();
+			return View(await Task.FromResult((new ListOfListsViewModel(lists)).GetResultString()));
 		}
 	}
 }
