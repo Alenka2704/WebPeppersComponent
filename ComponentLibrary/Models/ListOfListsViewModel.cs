@@ -25,11 +25,11 @@ namespace ComponentLibrary.Models
 			return TotalList.Distinct().ToList();
 		}
 
-		public async Task<string> GetResultString()
+		public string GetResultString()
 		{
 			StringBuilder result = new StringBuilder();
 			GetSortedDistincts().ForEach(item => result.Append(",").Append(item));
-			return await Task.FromResult(result.Remove(0, 1).ToString());
+			return result.Remove(0, 1).ToString();
 		}
 	}
 }
