@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace ComponentLibrary.Models
 {
@@ -10,7 +9,7 @@ namespace ComponentLibrary.Models
 		public List<int> TotalList { get; private set; }
 
 		/// <summary>
-		/// puts all lists together and generates result string
+		/// puts all lists together and sorts result
 		/// </summary>
 		/// <param name="totalList"></param>
 		public ListOfListsViewModel(List<List<int>> totalList)
@@ -20,7 +19,7 @@ namespace ComponentLibrary.Models
 			TotalList.Sort();
 		}
 
-		private List<int> GetSortedDistincts()
+		private List<int> GetDistincts()
 		{
 			return TotalList.Distinct().ToList();
 		}
@@ -28,7 +27,7 @@ namespace ComponentLibrary.Models
 		public string GetResultString()
 		{
 			StringBuilder result = new StringBuilder();
-			GetSortedDistincts().ForEach(item => result.Append(",").Append(item));
+			GetDistincts().ForEach(item => result.Append(",").Append(item));
 			return result.Remove(0, 1).ToString();
 		}
 	}
